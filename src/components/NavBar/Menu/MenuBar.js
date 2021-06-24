@@ -3,7 +3,7 @@ import React from "react";
 import useStyles from "./MenuStyles";
 import ArrowDropDownIcon from "@material-ui/icons/ArrowDropDown";
 import { ServicesList } from "../../../constants/ServicesList";
-import { HashLink } from 'react-router-hash-link';
+import { HashLink } from "react-router-hash-link";
 
 const MenuBar = ({ menuItem }) => {
   const classes = useStyles();
@@ -45,13 +45,18 @@ const MenuBar = ({ menuItem }) => {
                 className={classes.dropDownPosition}
               >
                 {ServicesList.map((serviceItem, index) => {
-                  return(
+                  return (
                     <MenuItem key={index}>
-                    <HashLink className={classes.hashLink} smooth to={`/services#${serviceItem.slug}`} >{serviceItem.serviceTitle}</HashLink>
-                  </MenuItem>
-                  )
-                  })}
-
+                      <HashLink
+                        className={classes.hashLink}
+                        smooth
+                        to={`/services#${serviceItem.slug}`}
+                      >
+                        {serviceItem.serviceTitle}
+                      </HashLink>
+                    </MenuItem>
+                  );
+                })}
               </Menu>
             </span>
           );
@@ -63,7 +68,13 @@ const MenuBar = ({ menuItem }) => {
               // }
               key={item.menuItemTxt}
             >
-              {item.menuItemTxt}
+              <HashLink
+                className={classes.hashLink}
+                smooth
+                to={item.menuItemLink}
+              >
+                {item.menuItemTxt}
+              </HashLink>
             </MenuItem>
           );
         }
