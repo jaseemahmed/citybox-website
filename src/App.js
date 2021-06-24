@@ -7,7 +7,6 @@ import { CssBaseline } from "@material-ui/core";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
 
-import { HashLink } from 'react-router-hash-link';
 
 const App = () => {
   const theme = createMuiTheme({
@@ -34,15 +33,15 @@ const App = () => {
           <Route path="/" exact>
             <Home />
           </Route>
-          <HashLink to="/about" exact>
+          {/* <Route path="/about" exact>
             <About />
-          </HashLink>
-          <Route to="/services" exact>
+          </Route>
+          <Route path="/services" exact>
             <Services />
           </Route>
-          <HashLink to="/contact" exact>
+          <Route path="/contact" exact>
             <Contact />
-          </HashLink>
+          </Route> */}
         </Switch>
       </div>
     </Router>
