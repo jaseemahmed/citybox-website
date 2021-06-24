@@ -58,9 +58,9 @@ const MenuBar = ({ menuItem }) => {
         } else {
           return (
             <MenuItem
-              onClick={(e) =>
-                navigateTo(e, item.menuItemTxt, item.menuItemLink)
-              }
+              // onClick={(e) =>
+              //   navigateTo(e, item.menuItemTxt, item.menuItemLink)
+              // }
               key={item.menuItemTxt}
             >
               {item.menuItemTxt}
