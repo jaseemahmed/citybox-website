@@ -60,5 +60,8 @@ export default makeStyles((theme) => ({
   hashLink:{
     color: '#000',
     textDecoration: 'none'
+  },
+  menuItemMob:{
+    padding: '0 3rem'
   }
 }));

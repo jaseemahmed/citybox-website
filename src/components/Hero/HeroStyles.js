@@ -17,17 +17,20 @@ export default makeStyles((theme) => ({
     left: "50%",
     transform: "translate(-50%, -50%)",
     position: "absolute",
-    padding: "3rem",
+    padding: "2rem",
     textAlign: "center",
     "& h1": {
       marginBottom: "1rem",
-      fontSize: "3rem",
+      fontSize: "2rem",
       textTransform: 'uppercase',
       fontWeight: 600
     },
     [theme.breakpoints.down("sm")]: {
       padding: "1rem",
       width: "100%",
+      background: '#ffffff57',
+      padding: '.5rem',
+      backdropFilter: 'blur(4px)',
       "& h1": {
         marginBottom: "1rem",
         fontSize: "2rem",

@@ -32,7 +32,7 @@ const CbModal = ({
       <Fade in={open}>
         <Paper
           className={classes.paper}
-          elevation={2}
+          elevation={4}
           style={{ width: `${width}`, height: `${height}`, backgroundImage: `url('${bg}')`}}
         >
           <div className={classes.modalHeader}>

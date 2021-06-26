@@ -15,6 +15,8 @@ export default makeStyles((theme) => ({
       justifyContent: 'space-between',
       alignItems: 'center',
       textTransform: 'uppercase',
+      marginTop: '2rem',
+      padding: '0 1rem'
   },
   paper:{
       padding: '1rem'

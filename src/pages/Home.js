@@ -58,10 +58,10 @@ const Home = () => {
         open={open}
         width="500px"
         handleClose={handleClose}
-        modalTitle="This is a form in modal"
+        modalTitle="Schedule Your Pickup"
         dialogContent={
           <ContactForm
-            btnTxt="Request Now"
+            btnTxt="Schedule Now"
             handleSend={handleSend}
           ></ContactForm>
         }
@@ -90,7 +90,7 @@ const Home = () => {
             </Slide>
           </Grid>
         </Grid>
-        <Grid container spacing={8} className={classes.featureCard}>
+        <Grid container spacing={downsm ? 4 : 8} className={classes.featureCard}>
           <Grid item lg={3}>
             <Fade bottom delay={300}>
               <IconCard iconImage={fastIcon} iconCardName="Fast" />

@@ -56,7 +56,7 @@ import {
           </Typography>
           {downsm ? (
             <Typography variant="body1" className={classes.cardLink}>
-              <HashLink underlineHover color="secondary" href={`${link}`}>
+              <HashLink  color="secondary" smooth to={`/services#${link}`}>
                 View more
               </HashLink>
             </Typography>

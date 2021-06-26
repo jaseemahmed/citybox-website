@@ -4,6 +4,7 @@ import { Box, Divider, IconButton, MenuItem } from "@material-ui/core";
 import useStyles from "./MenuStyles";
 import Drawer from "@material-ui/core/Drawer";
 import CloseIcon from "@material-ui/icons/Close";
+import { HashLink } from "react-router-hash-link";
 
 const MobileMenu = ({ menuItem, navigateTo }) => {
   const classes = useStyles();
@@ -40,7 +41,13 @@ const MobileMenu = ({ menuItem, navigateTo }) => {
           </div>
           {menuItem.map((item, index) => (
             <div className={classes.toolbar} key={index}>
-              <MenuItem>{item.menuItemTxt}</MenuItem>
+              <HashLink
+                className={classes.hashLink}
+                smooth
+                to={item.menuItemLink}
+              >
+                <MenuItem className={classes.menuItemMob}>{item.menuItemTxt}</MenuItem>
+              </HashLink>
               <Divider />
             </div>
           ))}

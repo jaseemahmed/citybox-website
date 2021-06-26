@@ -16,8 +16,9 @@ const Hero = ({ heroTitle, heroSubTitle, firstCta, secondCta, height, background
         >
           <div className={classes.heroCopy}>
             <Fade bottom delay={500}><Typography variant="h1">{heroTitle}</Typography></Fade>
-            <Fade bottom delay={600}><Typography variant="subtitle1">{heroSubTitle}</Typography></Fade>
-            <Fade bottom delay={700}><Box className={classes.heroBtnContainer}>
+            <Fade bottom delay={600}>{!heroSubTitle === "" && <Typography variant="subtitle1">{heroSubTitle}</Typography>}</Fade>
+            <Fade bottom delay={700}>
+              {firstCta && <Box className={classes.heroBtnContainer}>
               {firstCta && (
                 <Button variant="outlined" color="primary" onClick={handleModal}>
                   {firstCta}
@@ -28,7 +29,7 @@ const Hero = ({ heroTitle, heroSubTitle, firstCta, secondCta, height, background
                   {secondCta}
                 </Button>
               )}
-            </Box>
+            </Box>}
             </Fade>
           </div>
         </Box>

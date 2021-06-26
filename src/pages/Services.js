@@ -28,7 +28,7 @@ const Services = () => {
         <Hero
           heroTitle="You move on, We take care of the rest"
           heroSubTitle="We are here to help you with all kind of logistics and shipping services for you."
-          height="500px"
+          height="100vh"
           backgroundImage={servicesHero}
         />
       </Container>

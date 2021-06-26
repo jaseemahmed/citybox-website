@@ -10,7 +10,7 @@ import {
 import NavBar from "../components/NavBar/Navbar";
 import useStyles from "./pageStyles";
 import abouthero from "../images/abouthero.svg";
-import homeHeroMob from "../images/home-hero-600.svg";
+import aboutHeroMob from "../images/about-hero-600.svg";
 import Footer from '../components/Footer/Footer'
 import Hero from "../components/Hero/Hero";
 import visionImage from "../images/vision.svg";
@@ -34,10 +34,10 @@ const About = () => {
 
       <Container disableGutters={true}>
         <Hero
-          heroTitle="Your happy faces gives us the motivation to keep going."
+          heroTitle="Your happy face is our fuel to move on"
           heroSubTitle="With immense experience and the adoption of technology we serve you with quality."
           height="100vh"
-          backgroundImage={downsm ? abouthero : abouthero}
+          backgroundImage={downsm ? aboutHeroMob : abouthero}
         />
       </Container>
 

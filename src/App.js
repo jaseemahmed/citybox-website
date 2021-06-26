@@ -18,6 +18,9 @@ const App = () => {
         main: "#0F112E"
       },
     },
+    typography: {
+        fontFamily: 'Raleway',
+      },
   });
 
   return (

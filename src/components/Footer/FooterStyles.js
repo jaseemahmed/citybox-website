@@ -47,6 +47,7 @@ export default makeStyles((theme) => ({
     background: "#0f112e",
     padding: "2rem 4rem",
     color: "#fff",
+    width: '100%',
     [theme.breakpoints.down("sm")]: {
       padding: "1rem",
     },
@@ -54,7 +55,22 @@ export default makeStyles((theme) => ({
   rightGrid: {
     padding: "2rem",
   },
+  mobAdjust: {
+    [theme.breakpoints.down("sm")]: {
+      width: '100%'
+    },
+  },
   footerContent: {
     padding: "0 2em",
+    [theme.breakpoints.down("sm")]: {
+      display: "block",
+    },
   },
+  footerLinks:{
+    color: '#fff',
+    textDecoration: 'none'
+  },
+  footerSocialIcons: {
+    marginTop: '3rem'
+  }
 }));

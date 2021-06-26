@@ -22,6 +22,11 @@ export default makeStyles((theme) => ({
       flexFlow: "column",
       marginBottom: "4rem",
     },
+    [theme.breakpoints.down("sm")]: {
+      padding: 0,
+      flexFlow: "column",
+      marginBottom: "4rem",
+    },
   },
 
   sectionContainer: {

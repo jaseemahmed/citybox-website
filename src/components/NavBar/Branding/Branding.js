@@ -5,7 +5,7 @@ import useStyles from "./BrandingStyles";
 const Branding = ({ brandingImg, altTxt }) => {
   const classes = useStyles();
   return (
-    <Link href="https://mersatgroup.com">
+    <Link href="/">
       <img
         src={brandingImg}
         alt={altTxt}

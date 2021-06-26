@@ -6,6 +6,7 @@ export default makeStyles((theme) => ({
     margin: "0 4rem",
     position: "relative",
     color: "#aa1d34",
+    fontWeight: 600,
     [theme.breakpoints.down('sm')]: {
       margin: "0",
     },

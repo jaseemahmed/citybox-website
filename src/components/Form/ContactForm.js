@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import {
   FormControl,
   TextField,
@@ -6,17 +6,13 @@ import {
 } from "@material-ui/core";
 import useStyles from './FormStyles'
 
-const ContactForm = ({btnTxt, handleSend, sent}) => {
+const ContactForm = ({ btnTxt, handleSend, sent }) => {
   const classes = useStyles();
   const [values, setValues] = useState({
     uname: "",
     email: "",
     phone: "",
-    address1: "",
-    address2: "",
-    city: "",
-    emirate: "",
-    landmark: "",
+    message: "",
   });
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -32,68 +28,40 @@ const ContactForm = ({btnTxt, handleSend, sent}) => {
           <FormControl fullWidth className={classes.form}>
             <TextField
               type="text"
-              value={values.uname}
-              required
+              onChange={handleChange}
+              required value={values.uname}
+              variant="outlined"
+              className={classes.formField}
               label="Name"
-              onChange={handleChange}
-              name="uname"
-            />
+              name="uname" />
             <TextField
-              type="text"
-              value={values.email}
-              required
+              type="email"
+              onChange={handleChange}
+              required value={values.email}
+              variant="outlined"
+              className={classes.formField}
               label="Email"
-              onChange={handleChange}
-              name="email"
-            />
+              name="email" />
             <TextField
               type="text"
+              onChange={handleChange}
+              required
               value={values.phone}
-              required
-              label="Phone"
-              onChange={handleChange}
-              name="phone"
-            />
+              variant="outlined"
+              className={classes.formField}
+              label="Phone Number"
+              name="phone" />
             <TextField
               type="text"
-              value={values.address1}
-              required
-              label="Address Line 1"
               onChange={handleChange}
-              name="address1"
-            />
-            <TextField
-              type="text"
-              value={values.address2}
-              required
-              label="Address Line 2"
-              onChange={handleChange}
-              name="address2"
-            />
-            <TextField
-              type="text"
-              value={values.city}
-              required
-              label="City"
-              onChange={handleChange}
-              name="city"
-            />
-            <TextField
-              type="text"
-              value={values.emirate}
-              required
-              label="Emirate"
-              onChange={handleChange}
-              name="emirate"
-            />
-            <TextField
-              type="text"
-              value={values.landmark}
-              required
-              label="Nearest Landmark"
-              onChange={handleChange}
-              name="landmark"
-            />
+              value={values.message}
+              variant="outlined"
+              className={classes.formField}
+              label="Message"
+              name="message"
+              multiline={true} rows={5} />
+
+
             <Button type="submit" color="primary" variant="contained">
               {btnTxt}
             </Button>

@@ -5,7 +5,7 @@ export default makeStyles((theme) => ({
     position: "absolute",
     top: '10%',
     [theme.breakpoints.down("sm")]: {
-      width: "38%",
+      width: "30%",
       left: "2rem",
     },
     [theme.breakpoints.up("sm")]: {
