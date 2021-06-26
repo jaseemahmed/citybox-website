@@ -16,7 +16,7 @@ const Hero = ({ heroTitle, heroSubTitle, firstCta, secondCta, height, background
         >
           <div className={classes.heroCopy}>
             <Fade bottom delay={500}><Typography variant="h1">{heroTitle}</Typography></Fade>
-            <Fade bottom delay={600}>{!heroSubTitle === "" && <Typography variant="subtitle1">{heroSubTitle}</Typography>}</Fade>
+            <Fade bottom delay={600}>{heroSubTitle && <Typography variant="subtitle1">{heroSubTitle}</Typography>}</Fade>
             <Fade bottom delay={700}>
               {firstCta && <Box className={classes.heroBtnContainer}>
               {firstCta && (
