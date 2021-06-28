@@ -1,78 +1,64 @@
+import { TextField, Button, FormControl } from "@material-ui/core";
+import axios from "axios";
 import React, { useState } from "react";
-import {
-  FormControl,
-  TextField,
-  Button,
-} from "@material-ui/core";
+import { ErrorMessage, Field, Form, Formik } from "formik";
+import * as Yup from "yup";
 import useStyles from './FormStyles'
 
-const ContactForm = ({ btnTxt, handleSend, sent }) => {
-  const classes = useStyles();
-  const [values, setValues] = useState({
+
+const ContactForm = ({onSubmit}) => {
+  const initialValues = {
     uname: "",
-    email: "",
     phone: "",
+    email: "",
     message: "",
-  });
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setValues({
-      ...values,
-      [name]: value,
-    });
   };
+  const classes = useStyles()
+
+  const validationSchema = Yup.object().shape({
+    uname: Yup.string().required("Name is required"),
+    phone: Yup.number()
+      .required("Phone number is required")
+      .min(10, "Invalid phone number"),
+    email: Yup.string().required("Email is required").email("Invalid email"),
+    message: Yup.string().required("Message is required"),
+  });
+
+
+
   return (
-    <>
-      {!sent ? (
-        <form onSubmit={handleSend} autoComplete="off">
-          <FormControl fullWidth className={classes.form}>
-            <TextField
-              type="text"
-              onChange={handleChange}
-              required value={values.uname}
-              variant="outlined"
-              className={classes.formField}
-              label="Name"
-              name="uname" />
-            <TextField
-              type="email"
-              onChange={handleChange}
-              required value={values.email}
-              variant="outlined"
-              className={classes.formField}
-              label="Email"
-              name="email" />
-            <TextField
-              type="text"
-              onChange={handleChange}
-              required
-              value={values.phone}
-              variant="outlined"
-              className={classes.formField}
-              label="Phone Number"
-              name="phone" />
-            <TextField
-              type="text"
-              onChange={handleChange}
-              value={values.message}
-              variant="outlined"
-              className={classes.formField}
-              label="Message"
-              name="message"
-              multiline={true} rows={5} />
-
-
-            <Button type="submit" color="primary" variant="contained">
-              {btnTxt}
-            </Button>
+    <Formik
+      initialValues={initialValues}
+      validationSchema={validationSchema}
+      onSubmit={onSubmit}
+      enableReinitialize
+    >
+      {(formikProps) => (
+        <Form onSubmit={formikProps.handleSubmit} className={classes.form}>
+          <FormControl fullWidth className={classes.formField}>
+            <Field name="uname" as={TextField} label="Name" />
+            <ErrorMessage component="div" name="uname" />
           </FormControl>
-        </form>
-      ) : (
-        <div>
-          <p> mail sent</p>
-        </div>
+          <FormControl fullWidth className={classes.formField}>
+            <Field name="phone" as={TextField} label="Phone" />
+            <ErrorMessage component="div" name="phone" />
+          </FormControl>
+          <FormControl fullWidth className={classes.formField}>
+            <Field name="email" as={TextField} label="Email" />
+            <ErrorMessage component="div" name="email" />
+          </FormControl>
+          <FormControl fullWidth className={classes.formField}>
+            <Field name="message" as={TextField} label="Message" />
+            <ErrorMessage component="div" name="message" />
+          </FormControl>
+          <FormControl fullWidth>
+          <Button type="submit" variant="contained" color="primary">
+            Submit
+          </Button>
+          </FormControl>
+        </Form>
       )}
-    </>
+    </Formik>
   );
 };
 

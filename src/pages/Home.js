@@ -7,7 +7,7 @@ import fastIcon from "../images/fast.svg";
 import secureIcon from "../images/secure.svg";
 import reliableIcon from "../images/reliable.svg";
 import blobHome from "../images/blob.svg";
-import { Container, Grid } from "@material-ui/core";
+import { Container, Grid, Typography, CircularProgress } from "@material-ui/core";
 import SectionTitle from "../components/SectionTitle/SectionTitle";
 import TwoColumnImageLft from "../components/Sections/TwoColumnImageLft";
 import useStyles from "./pageStyles";
@@ -32,7 +32,8 @@ const Home = () => {
   const [sent, setSent] = useState(false);
   const [text, setText] = useState("");
   const [open, setOpen] = useState(false);
-  
+  const [success, setSuccess] = useState(false)
+
 
   const handleModal = () => {
     setOpen(true);
@@ -42,15 +43,14 @@ const Home = () => {
     setOpen(false);
   };
 
-  const handleSend = async (e) => {
-    setSent(true);
-    e.preventDefault();
-    try {
-      await axios.post("http://localhost:4000/send_mail", {  });
-      setOpen(false);
-    } catch (error) {
-      console.log(error);
-    }
+  const onSubmit = (values) => {
+    axios.post('http://localhost:4000/send', values)
+    setTimeout(function () {
+      setSuccess(true);
+    }, 1000);
+    setTimeout(function () { setOpen(false); }, 3000);
+    setTimeout(function () { 
+      setSuccess(false); }, 4000);
   };
   return (
     <>
@@ -59,11 +59,11 @@ const Home = () => {
         width="500px"
         handleClose={handleClose}
         modalTitle="Schedule Your Pickup"
-        dialogContent={
+        dialogContent={!success ?
           <ContactForm
+            onSubmit={onSubmit}
             btnTxt="Schedule Now"
-            handleSend={handleSend}
-          ></ContactForm>
+          ></ContactForm> : <Typography style={{ padding: '1rem', textAlign: 'center' }}>Thank You !! <br />We have successfully recieved your message. <br />One of our executive will get in touch with you soon. </Typography>
         }
       />
       <Container>
@@ -165,7 +165,18 @@ const Home = () => {
             blobTitle="Have something to move? Your a click away to reach us."
             blobImg={blobHome}
             blobImgAlt="this is a blob"
-            blobContent={<ContactForm btnTxt="Get a Quote" />}
+            blobContent={
+              !success ?
+                <ContactForm
+                  onSubmit={onSubmit}
+                  btnTxt="Get a quote"
+                /> :
+                <Typography style={{ padding: '1rem', textAlign: 'center' }}>
+                  Thank You !! <br />
+                  We have successfully recieved your message. <br />
+                  One of our executive will get in touch with you soon.
+                </Typography>
+            }
           />
         </Slide>
       </Container>
