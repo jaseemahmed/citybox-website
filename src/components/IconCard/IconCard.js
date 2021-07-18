@@ -14,6 +14,7 @@ const IconCard = ({
   iconCardName,
   iconContent,
   iconLink,
+  iconCardAlt
 }) => {
   const classes = useStyles();
   return (
