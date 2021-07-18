@@ -18,6 +18,7 @@ export const ServicesList = [
     slug: "doortodoorcargo",
     serviceSubTitle: "",
     serviceImage: `${doortodoor}`,
+    serviceImgAlt: "Best Door to Door Cargo in UAE, GCC, UK and the US",
     serviceShortDesc:
       "We provide safe and secure door to door parcel services.",
     serviceDesc:
@@ -28,6 +29,7 @@ export const ServicesList = [
     slug: "aircargo",
     serviceSubTitle: "",
     serviceImage: `${aircargo}`,
+    serviceImgAlt: "Best Air Cargo in UAE, GCC, UK and the US",
     serviceShortDesc:
       "Worldclass transactions for personal and commercial goods with our overseas air freight forwarding services.",
     serviceDesc:
@@ -38,6 +40,7 @@ export const ServicesList = [
     slug: "seacargo",
     serviceSubTitle: "",
     serviceImage: `${seacargo}`,
+    serviceImgAlt: "Best Sea Cargo in UAE, GCC, UK and the US",
     serviceShortDesc:
       "On all major trade routes, we provide complete Ocean Freight services for Full Container Load (FCL) and Less-than-Container Load (LCL) shipments.",
     serviceDesc:
@@ -48,6 +51,7 @@ export const ServicesList = [
     slug: "landcargo",
     serviceSubTitle: "",
     serviceImage: `${landcargo}`,
+    serviceImgAlt: "Best Land Cargo in UAE, GCC, UK and the US",
     serviceShortDesc:
       "With a strong network of transporters and professionals, we help our people to move their goods in time.",
     serviceDesc:
@@ -58,6 +62,7 @@ export const ServicesList = [
     slug: "freightforwarding",
     serviceSubTitle: "",
     serviceImage: `${freightforwarding}`,
+    serviceImgAlt: "Best Freight Forwarding service in UAE, GCC, UK and the US",
     serviceShortDesc:
       "We assure the transaction of your products by employing cutting-edge technology.",
     serviceDesc:
@@ -68,6 +73,7 @@ export const ServicesList = [
     slug: "commercialcargo",
     serviceSubTitle: "(Vehicle spare parts to GCC)",
     serviceImage: `${commercialcargo}`,
+    serviceImgAlt: "Transportation of vehicle spare parts to GCC",
     serviceShortDesc:
       "We provide one-of-a-kind logistical solutions for commercial goods of any weight or dimension, based on our expert knowledge and expertise.",
     serviceDesc:
@@ -78,6 +84,7 @@ export const ServicesList = [
     slug: "warehouse-storage",
     serviceSubTitle: "",
     serviceImage: `${warehousing}`,
+    serviceImgAlt: "Warehousing & Storage space for cargo",
     serviceShortDesc:
       "With our effective warehouse and storage systems, we keep your products safe.",
     serviceDesc:
@@ -88,6 +95,7 @@ export const ServicesList = [
     slug: "international-relocation",
     serviceSubTitle: "",
     serviceImage: `${intlrelocation}`,
+    serviceImgAlt: "Best international relocation service in GCC, UK and the US",
     serviceShortDesc:
       "We will take care of your international move, transporting your belongings safely and securely to any place in the world.",
     serviceDesc:
@@ -98,6 +106,7 @@ export const ServicesList = [
     slug: "domestic-relocation",
     serviceSubTitle: "(Flats, Villas &amp; Offices)",
     serviceImage: `${domesticrelocation}`,
+    serviceImgAlt: "Best domestic relocation service in GCC, UK and the US",
     serviceShortDesc:
       "Moving to a new location? No matter its your office or accomodation. We take care of moving your things.",
     serviceDesc:
@@ -108,6 +117,7 @@ export const ServicesList = [
     slug: "export-import",
     serviceSubTitle: "",
     serviceImage: `${exportimport}`,
+    serviceImgAlt: "Best export and import services in GCC, UK and the US",
     serviceShortDesc:
       "With genuinely individualized service, our export services team traverses the newest laws, reduces paperwork, expedites transportation, and decreases shipping costs.",
     serviceDesc:
@@ -118,6 +128,7 @@ export const ServicesList = [
     slug: "customs-clearance",
     serviceSubTitle: "",
     serviceImage: `${customs}`,
+    serviceImgAlt: "Best custom clearance service in GCC, UK and the US",
     serviceShortDesc:
       "We strive to be the best alternative for importers by providing precision in performance and efficiency in the completion of customs procedures.",
     serviceDesc:
@@ -128,6 +139,7 @@ export const ServicesList = [
     slug: "vehicle-export",
     serviceSubTitle: "",
     serviceImage: `${vehicleexport}`,
+    serviceImgAlt: "Best vehicle export service in GCC, UK and the US",
     serviceShortDesc:
       "We send vehicles all around the world via air, sea container, or RoRo vehicle transport ships.",
     serviceDesc:
@@ -138,6 +150,7 @@ export const ServicesList = [
     slug: "shop-ship",
     serviceSubTitle: "",
     serviceImage: `${shopnship}`,
+    serviceImgAlt: "Best shop and ship service in GCC, UK and the US",
     serviceShortDesc:
       "Want to buy somrthing from another country online? Confused of the shipping? Shop now, we will Ship it for you.",
     serviceDesc:

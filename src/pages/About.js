@@ -64,7 +64,7 @@ const About = () => {
           <Grid item md={7}>
             <Fade left>
             <Card elevation={0}>
-              <CardMedia component="img" alt="" image={visionImage}></CardMedia>
+              <CardMedia component="img" alt="simple and reliable logistics services" image={visionImage}></CardMedia>
             </Card>
             </Fade>
           </Grid>
@@ -96,7 +96,7 @@ const About = () => {
           <Grid item md={7}>
           <Fade right>
             <Card elevation={0}>
-              <CardMedia component="img" alt="" image={missionImage}></CardMedia>
+              <CardMedia component="img" alt="Affordable logistic services in GCC, UK and the US" image={missionImage}></CardMedia>
             </Card>
             </Fade>
           </Grid>

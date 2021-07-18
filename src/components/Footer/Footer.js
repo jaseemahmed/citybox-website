@@ -60,7 +60,7 @@ const Footer = () => {
       </Grid>
       <Grid item md={4} className={classes.mobAdjust}>
         <Box className={classes.rightGrid}>
-          <img src={logo2} alt=""></img>
+          <img src={logo2} alt="citybox cargo movers llc" />
           <Box className={classes.footerAddress}>
             <Typography>Address Line 1</Typography>
             <Typography>Address Line 2</Typography>

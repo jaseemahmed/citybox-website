@@ -7,7 +7,12 @@ import fastIcon from "../images/fast.svg";
 import secureIcon from "../images/secure.svg";
 import reliableIcon from "../images/reliable.svg";
 import blobHome from "../images/blob.svg";
-import { Container, Grid, Typography, CircularProgress } from "@material-ui/core";
+import {
+  Container,
+  Grid,
+  Typography,
+  CircularProgress,
+} from "@material-ui/core";
 import SectionTitle from "../components/SectionTitle/SectionTitle";
 import TwoColumnImageLft from "../components/Sections/TwoColumnImageLft";
 import useStyles from "./pageStyles";
@@ -32,8 +37,7 @@ const Home = () => {
   const [sent, setSent] = useState(false);
   const [text, setText] = useState("");
   const [open, setOpen] = useState(false);
-  const [success, setSuccess] = useState(false)
-
+  const [success, setSuccess] = useState(false);
 
   const handleModal = () => {
     setOpen(true);
@@ -44,13 +48,16 @@ const Home = () => {
   };
 
   const onSubmit = (values) => {
-    axios.post('http://localhost:4000/send', values)
+    axios.post("http://localhost:4000/send", values);
     setTimeout(function () {
       setSuccess(true);
     }, 1000);
-    setTimeout(function () { setOpen(false); }, 3000);
-    setTimeout(function () { 
-      setSuccess(false); }, 4000);
+    setTimeout(function () {
+      setOpen(false);
+    }, 3000);
+    setTimeout(function () {
+      setSuccess(false);
+    }, 4000);
   };
   return (
     <>
@@ -59,11 +66,19 @@ const Home = () => {
         width="500px"
         handleClose={handleClose}
         modalTitle="Schedule Your Pickup"
-        dialogContent={!success ?
-          <ContactForm
-            onSubmit={onSubmit}
-            btnTxt="Schedule Now"
-          ></ContactForm> : <Typography style={{ padding: '1rem', textAlign: 'center' }}>Thank You !! <br />We have successfully recieved your message. <br />One of our executive will get in touch with you soon. </Typography>
+        dialogContent={
+          !success ? (
+            <ContactForm
+              onSubmit={onSubmit}
+              btnTxt="Schedule Now"
+            ></ContactForm>
+          ) : (
+            <Typography style={{ padding: "1rem", textAlign: "center" }}>
+              Thank You !! <br />
+              We have successfully recieved your message. <br />
+              One of our executive will get in touch with you soon.{" "}
+            </Typography>
+          )
         }
       />
       <Container>
@@ -90,20 +105,36 @@ const Home = () => {
             </Slide>
           </Grid>
         </Grid>
-        <Grid container spacing={downsm ? 4 : 8} className={classes.featureCard}>
+        <Grid
+          container
+          spacing={downsm ? 4 : 8}
+          className={classes.featureCard}
+        >
           <Grid item lg={3}>
             <Fade bottom delay={300}>
-              <IconCard iconImage={fastIcon} iconCardName="Fast" />
+              <IconCard
+                iconImage={fastIcon}
+                iconCardName="Fast"
+                iconCardAlt="Fastest logistics and moving service"
+              />
             </Fade>
           </Grid>
           <Grid item lg={3}>
             <Fade bottom delay={500}>
-              <IconCard iconImage={secureIcon} iconCardName="Secure" />
+              <IconCard
+                iconImage={secureIcon}
+                iconCardName="Secure"
+                iconCardAlt="Secure way for moving your shipments"
+              />
             </Fade>
           </Grid>
           <Grid item lg={3}>
             <Fade bottom delay={700}>
-              <IconCard iconImage={reliableIcon} iconCardName="reliable" />
+              <IconCard
+                iconImage={reliableIcon}
+                iconCardName="reliable"
+                iconCardAlt="Reliable logistics, shipping and cargo company in GCC, UK, US"
+              />
             </Fade>
           </Grid>
         </Grid>
@@ -123,7 +154,7 @@ const Home = () => {
         <Fade bottom>
           <TwoColumnImageLft
             image={aboutImage}
-            alt="best packers and movers in GCC"
+            alt="Best packers and movers in GCC"
             txtCopy1="We, at citybox cargo movers llc, provides the best in class service in the field of packing, moving, domestic and overseas relocation, frieght forwarding, shipping and customs clearance, with our experienced professionals in the industry."
             txtCopy2="Established in Dubai, one of the movement hub of the world, we are geared up with technolgy and professionals across GCC countries, Europe and USA to handle your goods safe and secure."
           />
@@ -147,6 +178,7 @@ const Home = () => {
             <Grid item sm={6} md={6} lg={4} key={index}>
               <Slide bottom>
                 <ServiceCard
+                  alt={service.serviceImgAlt}
                   cardImage={service.serviceImage}
                   serviceName={service.serviceTitle}
                   subName={service.serviceSubTitle}
@@ -164,18 +196,17 @@ const Home = () => {
           <BlobSection
             blobTitle="Have something to move? Your a click away to reach us."
             blobImg={blobHome}
-            blobImgAlt="this is a blob"
+            blobImgAlt="Best logistics company in GCC, UK, US"
             blobContent={
-              !success ?
-                <ContactForm
-                  onSubmit={onSubmit}
-                  btnTxt="Get a quote"
-                /> :
-                <Typography style={{ padding: '1rem', textAlign: 'center' }}>
+              !success ? (
+                <ContactForm onSubmit={onSubmit} btnTxt="Get a quote" />
+              ) : (
+                <Typography style={{ padding: "1rem", textAlign: "center" }}>
                   Thank You !! <br />
                   We have successfully recieved your message. <br />
                   One of our executive will get in touch with you soon.
                 </Typography>
+              )
             }
           />
         </Slide>
