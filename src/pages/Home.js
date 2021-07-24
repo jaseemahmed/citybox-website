@@ -29,6 +29,7 @@ import Fade from "react-reveal/Fade";
 import Slide from "react-reveal/Slide";
 import axios from "axios";
 import Modal from "../components/Modal/CbModal";
+import FabBtn from "../components/FabBtn/FabBtn";
 const Home = () => {
   const classes = useStyles();
 
@@ -215,6 +216,9 @@ const Home = () => {
       <Container disableGutters={true} className={classes.footerContainer}>
         <Footer />
       </Container>
+      {/* <Container> */}
+        <FabBtn />
+      {/* </Container> */}
     </>
   );
 };
