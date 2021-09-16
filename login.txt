@@ -1,0 +1,97 @@
+import React from "react";
+import {
+  Container,
+  Grid,
+  Paper,
+  TextField,
+  Button,
+  FormControl,
+  Typography
+} from "@material-ui/core";
+import { Formik, Form, Field, ErrorMessage } from "formik";
+import * as Yup from "yup";
+import useStyles from "./AuthStyles";
+import { Link } from "react-router-dom";
+
+const Login = () => {
+  const classes = useStyles();
+  return (
+    <>
+      <Container className={classes.boxContainer}>
+        <Grid container className={classes.justifyCenter}>
+          <Grid item md={4}>
+            <Paper
+              className={`${classes.loginBox} ${classes.hasBg}`}
+              elevation={2}
+            >
+              <Formik
+                initialValues={{ username: "", password: "" }}
+                validationSchema={Yup.object().shape({
+                  username: Yup.string()
+                    .required("Please enter the username")
+                    .email("Invalid username"),
+                  password: Yup.string().required("Please enter your password")
+                })}
+                onSubmit={(values) => {
+                  alert(JSON.stringify(values, null, 2));
+                }}
+              >
+                {(formik) => (
+                  <>
+                    <Form
+                      onSubmit={formik.handleSubmit}
+                      className={classes.flexForm}
+                    >
+                      <FormControl className={classes.field} fullWidth>
+                        <Field
+                          as={TextField}
+                          label="Username"
+                          type="text"
+                          placeholder="john@example.com"
+                          name="username"
+                        ></Field>
+                        <ErrorMessage
+                          component="span"
+                          name="username"
+                          className={classes.error}
+                        />
+                      </FormControl>
+                      <FormControl className={classes.field} fullWidth>
+                        <Field
+                          as={TextField}
+                          label="Password"
+                          type="password"
+                          placeholder="********"
+                          name="password"
+                        ></Field>
+                        <ErrorMessage
+                          component="span"
+                          name="password"
+                          className={classes.error}
+                        />
+                      </FormControl>
+                      <FormControl fullWidth className={classes.field}>
+                        <Button
+                          type="submit"
+                          color="primary"
+                          variant="contained"
+                        >
+                          Login
+                        </Button>
+                      </FormControl>
+
+                      <Typography className={classes.justifyRight}>
+                        <Link to="/resetPassword">Forgot password</Link>
+                      </Typography>
+                    </Form>
+                  </>
+                )}
+              </Formik>
+            </Paper>
+          </Grid>
+        </Grid>
+      </Container>
+    </>
+  );
+};
+export default Login;
