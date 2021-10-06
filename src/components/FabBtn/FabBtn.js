@@ -5,9 +5,13 @@ import useStyles from "./FabBtnStyles";
 
 const FabBtn = () => {
   const classes = useStyles();
+
+  const openWhatsapp = () => {
+    window.open('https://api.whatsapp.com/send?phone=00971507285030', "blank")
+  }
   
   return (
-    <Fab color="primary" aria-label="add" className={classes.whatsAppBtn} >
+    <Fab color="primary" aria-label="add" className={classes.whatsAppBtn} onClick={openWhatsapp}>
       <WhatsAppIcon />
     </Fab>
   );

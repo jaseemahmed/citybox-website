@@ -40,7 +40,7 @@ export default makeStyles((theme) => ({
     justifyContent: "center",
     textAlign: "center",
     "& p": {
-      marginBottom: "1rem",
+      marginBottom: ".5rem",
     },
   },
   leftGrid: {
@@ -66,11 +66,17 @@ export default makeStyles((theme) => ({
       display: "block",
     },
   },
-  footerLinks:{
+  footerLinks: {
     color: '#fff',
     textDecoration: 'none'
   },
   footerSocialIcons: {
     marginTop: '3rem'
+  },
+  gmap: {
+    margin: "2rem 0",
+    '& iframe':{
+      width: "100%"
+    }
   }
 }));

@@ -54,6 +54,9 @@ const Footer = () => {
                 Connect us
               </Typography>
               <div className={classes.footerSocialIcons}><SocialIcons /></div>
+              <div className={classes.gmap}>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3611.1856652670094!2d55.37987231500881!3d25.163207983911978!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0!2zMjXCsDA5JzQ3LjYiTiA1NcKwMjInNTUuNCJF!5e0!3m2!1sen!2sae!4v1633538765721!5m2!1sen!2sae"></iframe>
+              </div>
             </Box>
           </Grid>
         </Grid>
@@ -62,10 +65,12 @@ const Footer = () => {
         <Box className={classes.rightGrid}>
           <img src={logo2} alt="citybox cargo movers llc" />
           <Box className={classes.footerAddress}>
-            <Typography>Address Line 1</Typography>
-            <Typography>Address Line 2</Typography>
+            <Typography>Shop 16-B, Sajaya No.7</Typography>
+            <Typography>Nad Al Sheba 3</Typography>
             <Typography>Dubai, United Arab Emirates</Typography>
-            <Typography>+971 520 00 0000</Typography>
+            <Typography>04 224 0111</Typography>
+            <Typography>+971 50 568 3891</Typography>
+            <Typography>+971 50 728 5030</Typography>
             <Typography>info@citybox.com</Typography>
           </Box>
         </Box>
