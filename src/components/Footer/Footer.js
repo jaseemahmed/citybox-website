@@ -55,7 +55,7 @@ const Footer = () => {
               </Typography>
               <div className={classes.footerSocialIcons}><SocialIcons /></div>
               <div className={classes.gmap}>
-                <iframe src="<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d536.8059694981569!2d55.3816853235923!3d25.163206017091!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjXCsDA5JzQ3LjYiTiA1NcKwMjInNTUuNCJF!5e0!3m2!1sen!2sae!4v1633860390852!5m2!1sen!2sae"></iframe>
+                <iframe src="<iframe src="https:\\//www.google.com\/maps\/embed?pb=!1m18!1m12!1m3!1d536.8059694981569!2d55.3816853235923!3d25.163206017091!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjXCsDA5JzQ3LjYiTiA1NcKwMjInNTUuNCJF!5e0!3m2!1sen!2sae!4v1633860390852!5m2!1sen!2sae"></iframe>
               </div>
             </Box>
           </Grid>
