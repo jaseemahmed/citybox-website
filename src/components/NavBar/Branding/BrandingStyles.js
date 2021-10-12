@@ -17,7 +17,7 @@ export default makeStyles((theme) => ({
       left: "3rem",
     },
     [theme.breakpoints.up("lg")]: {
-      width: "9%",
+      width: "6%",
       left: "10%",
       top: '10%'
     },

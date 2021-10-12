@@ -18,17 +18,17 @@ const PORT = process.env.PORT || 4000;
 app.post("/send", (req, res) => {
   const { uname, phone, email, message } = req.body;
   var transport = nodemailer.createTransport({
-    host: "smtp.mailtrap.io",
-    port: 2525,
+    host: process.env.HOST,
+    port: 465,
     auth: {
-      user: "05896db08515f5",
-      pass: "1284180364f060",
+      user: process.env.USER,
+      pass: process.env.PASSWORD,
     },
   });
 
   var mailData = {
     from: uname,
-    to: "info@mail.com",
+    to: "info@cityboxcargo.com",
     subject: "Contact form request",
     html: `<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional //EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
         <html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">

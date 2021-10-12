@@ -156,7 +156,7 @@ const Home = () => {
           <TwoColumnImageLft
             image={aboutImage}
             alt="Best packers and movers in GCC"
-            txtCopy1="We, at citybox cargo movers llc, provides the best in class service in the field of packing, moving, domestic and overseas relocation, frieght forwarding, shipping and customs clearance, with our experienced professionals in the industry."
+            txtCopy1="We, at citybox cargo movers, provides the best in class service in the field of packing, moving, domestic and overseas relocation, frieght forwarding, shipping and customs clearance, with our experienced professionals in the industry."
             txtCopy2="Established in Dubai, one of the movement hub of the world, we are geared up with technolgy and professionals across GCC countries, Europe and USA to handle your goods safe and secure."
           />
         </Fade>

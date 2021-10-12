@@ -63,7 +63,7 @@ const Footer = () => {
       </Grid>
       <Grid item md={4} className={classes.mobAdjust}>
         <Box className={classes.rightGrid}>
-          <img src={logo2} alt="citybox cargo movers llc" />
+          <img src={logo2} alt="citybox cargo movers" />
           <Box className={classes.footerAddress}>
             <Typography>Shop 16-B, Sajaya No.7</Typography>
             <Typography>Nad Al Sheba 3</Typography>
@@ -71,7 +71,7 @@ const Footer = () => {
             <Typography>04 224 0111</Typography>
             <Typography>+971 50 568 3891</Typography>
             <Typography>+971 50 728 5030</Typography>
-            <Typography>info@citybox.com</Typography>
+            <Typography>info@cityboxcargo.com</Typography>
           </Box>
         </Box>
       </Grid>
