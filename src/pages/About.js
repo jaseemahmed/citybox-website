@@ -35,7 +35,7 @@ const About = () => {
       <Container disableGutters={true}>
         <Hero
           heroTitle="Your happy face is our fuel to move on"
-          heroSubTitle="With immense experience and the adoption of technology we serve you with quality."
+          heroSubTitle="With immense experience and the adoption of technology, we serve you with quality."
           height="100vh"
           backgroundImage={downsm ? aboutHeroMob : abouthero}
         />
@@ -51,7 +51,7 @@ const About = () => {
               sSubTitle="We take care of all your shipping needs"
             />
             <Typography variant="body1" className={classes.PlainTxt}>
-              We are a group of innovative minds who works together to provide the best in the field of logistics. Our aim is to make the movement easy, fast and secure with no hassles our customers. That is why we say <b>"YOU MOVE ON, WE WILL MOVE YOURS"</b>.
+            We are a group of innovative minds who works together to provide the best in the field of logistics. Our aim is to make the movement easy, fast, and secure with no hassles for our customers. That is why we say <b>"YOU MOVE ON, WE WILL MOVE YOURS"</b>.
             </Typography>
             
             </Slide>

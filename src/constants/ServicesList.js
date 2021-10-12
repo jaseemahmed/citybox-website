@@ -20,7 +20,7 @@ export const ServicesList = [
     serviceImage: `${doortodoor}`,
     serviceImgAlt: "Best Door to Door Cargo in UAE, GCC, UK and the US",
     serviceShortDesc:
-      "We provide safe and secure door to door parcel services.",
+      "We provide safe and secure door-to-door parcel services.",
     serviceDesc:
       "We, at Citybox cargo movers, provide high-quality door-to-door parcel delivery services. With our trained personnel all around the world, we provide safe and secure transport of your goods. We take care of all types of items and provide you with prompt, secure, and expert delivery.",
   },
@@ -44,7 +44,7 @@ export const ServicesList = [
     serviceShortDesc:
       "On all major trade routes, we provide complete Ocean Freight services for Full Container Load (FCL) and Less-than-Container Load (LCL) shipments.",
     serviceDesc:
-      "We are your comprehensive solution for all kinds of Ocean Frieght Movement on all major trade routes accross the GCC countries, Europe and the US. We accept all types of shipments, including Full Container Load (FCL) and Less-than-Container Load (LCL). We can manage shipments using our own Institutional Contract of Carriage, ensuring that they are handled properly at both the origin and destination ports.",
+      "We are your comprehensive solution for all kinds of Ocean Freight Movement on all major trade routes across the GCC countries, Europe, and the US. We accept all types of shipments, including Full Container Load (FCL) and Less-than-Container Load (LCL). We can manage shipments using our Institutional Contract of Carriage, ensuring that they are handled properly at both the origin and destination ports.",
   },
   {
     serviceTitle: "Land Cargo",
@@ -108,9 +108,9 @@ export const ServicesList = [
     serviceImage: `${domesticrelocation}`,
     serviceImgAlt: "Best domestic relocation service in GCC, UK and the US",
     serviceShortDesc:
-      "Moving to a new location? No matter its your office or accomodation. We take care of moving your things.",
+      "Moving to a new location? No matter it's your office or accommodation. We take care of moving your things.",
     serviceDesc:
-      "Relocating is always hectic, but don't worry, our experts in packing and moving will help you with the best and affordable solution for your problem. From planning, packing your items safe, transporting and all you need, we help you, with our professionals to take over the task for you. We provide office relocation services, flat relocation services and villa relocation.",
+      "Relocating is always hectic, but don't worry, our experts in packing and moving will help you with the best and affordable solution for your problem. From planning, packing your items safe, transporting, and all you need, we help you, with our professionals to take over the task for you. We provide office relocation services, flat relocation services, and villa relocation.",
   },
   {
     serviceTitle: "Export & Import",
@@ -152,8 +152,8 @@ export const ServicesList = [
     serviceImage: `${shopnship}`,
     serviceImgAlt: "Best shop and ship service in GCC, UK and the US",
     serviceShortDesc:
-      "Want to buy somrthing from another country online? Confused of the shipping? Shop now, we will Ship it for you.",
+      "Want to buy something from another country online? Confused about the shipping? Shop now, we will ship it for you.",
     serviceDesc:
-      "To our list, we've added the Shop & Ship service. We'll handle the shipment if you buy something online. We have an efficient staff to interact with the delivery of your e-commerce purchases throughout the GCC nations, Europe, and the United States, owing to partnership with industry leading e-commerce services.",
+      "To our list, we've added the Shop & Ship service. We'll handle the shipment if you buy something online. We have an efficient staff to interact with the delivery of your e-commerce purchases throughout the GCC nations, Europe, and the United States, owing to a partnership with industry-leading e-commerce services.",
   },
 ];

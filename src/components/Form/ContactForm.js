@@ -4,9 +4,10 @@ import React, { useState } from "react";
 import { ErrorMessage, Field, Form, Formik } from "formik";
 import * as Yup from "yup";
 import useStyles from './FormStyles'
+import Swal from "sweetalert2";
 
 
-const ContactForm = ({onSubmit}) => {
+const ContactForm = () => {
   const initialValues = {
     uname: "",
     phone: "",
@@ -30,7 +31,26 @@ const ContactForm = ({onSubmit}) => {
     <Formik
       initialValues={initialValues}
       validationSchema={validationSchema}
-      onSubmit={onSubmit}
+      onSubmit={(values, { setSubmitting, resetForm }) => {
+        console.log(values);
+        setTimeout(() => {
+          axios.post("http://localhost:5000/sendMessage", values)
+          .then((response) => {
+            console.log(response)
+          })
+          setSubmitting(false);
+          resetForm();
+        }, 1000);
+        setTimeout(() => {
+          Swal.fire({
+            title: "<h5>Thank you for contacting City Box Cargo Movers</h5>",
+            text: "One of our executives will get in touch with you soon.",
+            icon: "success",
+            position: "center",
+            timer: 4000,
+          });
+        }, 2100);
+      }}
       enableReinitialize
     >
       {(formikProps) => (
@@ -52,9 +72,9 @@ const ContactForm = ({onSubmit}) => {
             <ErrorMessage component="div" name="message" />
           </FormControl>
           <FormControl fullWidth>
-          <Button type="submit" variant="contained" color="primary">
-            Submit
-          </Button>
+            <Button type="submit" variant="contained" color="primary">
+              Submit
+            </Button>
           </FormControl>
         </Form>
       )}

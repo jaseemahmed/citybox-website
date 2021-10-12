@@ -40,9 +40,7 @@ const Services = () => {
             sSubTitle="Serving the society with better logistics"
           />
           <Typography variant="body2" className={classes.PlainTxt}>
-            At citybox cargo movers, we offer you a secure, timely and efficient
-            solution for all your shipping needs. We pack it not only with your
-            valuable goods but also with our quality.
+            At city box cargo movers, we offer you a secure, timely, and efficient solution for all your shipping needs. We pack it not only with your valuable goods but also with our quality.
           </Typography>
         </Fade>
       </Container>

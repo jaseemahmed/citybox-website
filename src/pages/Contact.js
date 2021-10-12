@@ -18,14 +18,6 @@ const Contact = () => {
   const [success, setSuccess] = useState()
   const theme = useTheme();
   const downsm = useMediaQuery(theme.breakpoints.down("sm"));
-  const onSubmit = (values) => {
-    axios.post('http://localhost:4000/send', values)
-    setTimeout(function () {
-      setSuccess(true);
-    }, 1000);
-    setTimeout(function () { 
-      setSuccess(false); }, 3000);
-  };
   return (
     <>
       <Container>
@@ -34,7 +26,7 @@ const Contact = () => {
 
       <Container disableGutters={true} className={classes.heroContainer}>
         <Hero
-          heroTitle="Have something to move? You'r a click away to reach us."
+          heroTitle="HAVE SOMETHING TO MOVE? YOU'RE A CLICK AWAY TO REACH US."
           heroSubTitle=""
           height="100vh"
           backgroundImage={downsm ? contactHeroMob : contactHero}
@@ -44,19 +36,14 @@ const Contact = () => {
       <Container disableGutters={true} className={classes.sectionContainer}>
         <Grid container spacing={4} className={`${classes.flexFlowMob} ${classes.reverse}`}>
           <Grid item md={6}>
-           <SocialIcons />
+            <SocialIcons />
           </Grid>
           <Grid item md={6} className={classes.contactPageForm}>
-           <Fade bottom>{!success ?
-                <ContactForm
-                  onSubmit={onSubmit}
-                  btnTxt="Get a quote"
-                /> :
-                <Typography style={{ padding: '1rem', textAlign: 'center' }}>
-                  Thank You !! <br />
-                  We have successfully recieved your message. <br />
-                  One of our executive will get in touch with you soon.
-                </Typography>}</Fade> 
+            <Fade bottom>
+              <ContactForm
+                btnTxt="Get a quote"
+              />
+            </Fade>
           </Grid>
         </Grid>
       </Container>
