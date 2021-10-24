@@ -19,7 +19,7 @@ app.post("/sendMessage", (req, res) => {
   const { uname, phone, email, message } = req.body;
   var transport = nodemailer.createTransport({
     host: "smtp.zoho.com",
-    port: 465,
+    port: 587,
     auth: {
       user: "info@cityboxcargo.com",
       pass: "@Citybox123#"
@@ -27,8 +27,8 @@ app.post("/sendMessage", (req, res) => {
   });
 
   var mailData = {
-    // from: '"senderNameSameLikeTheZohoOne" <info@cityboxcargo.com>',
-    from: 'info@cityboxcargo.com',
+    from: '"senderNameSameLikeTheZohoOne" <info@cityboxcargo.com>',
+    // from: 'info@cityboxcargo.com',
     to: 'info@cityboxcargo.com',
     subject: `You have a message from ${uname}`,
     html: contactTemplate(uname, phone, email, message),
