@@ -54,7 +54,7 @@ const ContactForm = () => {
       enableReinitialize
     >
       {(formikProps) => (
-        <Form onSubmit={formikProps.handleSubmit} className={classes.form}>
+        <Form onSubmit={formikProps.handleSubmit} className={classes.form} name="contact-form" data-netlify={true} >
           <FormControl fullWidth className={classes.formField}>
             <Field name="uname" as={TextField} label="Name" />
             <ErrorMessage component="div" name="uname" />
