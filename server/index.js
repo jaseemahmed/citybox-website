@@ -7,8 +7,12 @@ import { contactTemplate } from "./templates/contactTemplate.js";
 dotenv.config();
 
 const app = express();
+<<<<<<< HEAD
 const router = express.Router();
 
+=======
+const router = express.Router()
+>>>>>>> 2fc20a2155ae461a8bfbc836225cae626e6eaf9b
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
@@ -36,6 +40,7 @@ router.post("/sendMessage", (req, res) => {
   };
 
   transport.sendMail(mailData, (error, info) => {
+    console.log(mailData)
     if (error) {
       return console.log(error);
     } else {
