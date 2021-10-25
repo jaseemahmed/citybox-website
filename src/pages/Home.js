@@ -58,7 +58,6 @@ const Home = () => {
         dialogContent={
           !success ? (
             <ContactForm
-              onSubmit={onSubmit}
               btnTxt="Schedule Now"
             ></ContactForm>
           ) : (
@@ -188,7 +187,7 @@ const Home = () => {
             blobImgAlt="Best logistics company in GCC, UK, US"
             blobContent={
               !success ? (
-                <ContactForm onSubmit={onSubmit} btnTxt="Get a quote" />
+                <ContactForm btnTxt="Get a quote" />
               ) : (
                 <Typography style={{ padding: "1rem", textAlign: "center" }}>
                   Thank You !! <br />
