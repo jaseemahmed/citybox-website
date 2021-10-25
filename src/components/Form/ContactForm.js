@@ -34,7 +34,7 @@ const ContactForm = () => {
       onSubmit={(values, { setSubmitting, resetForm }) => {
         console.log(values);
         setTimeout(() => {
-          axios.post("https://www.cityboxcargomovers.com/sendMessage", values)
+          axios.post("https://cityboxcargo.herokuapp.com/sendMessage", values)
           .then((response) => {
             console.log(response)
           })

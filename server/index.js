@@ -7,6 +7,7 @@ import { contactTemplate } from "./templates/contactTemplate.js";
 dotenv.config();
 
 const app = express();
+const router = express.Router();
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -15,7 +16,7 @@ app.use(cors());
 
 const PORT = process.env.PORT || 8000;
 
-app.post("/sendMessage", (req, res) => {
+router.post("/sendMessage", (req, res) => {
   const { uname, phone, email, message } = req.body;
   var transport = nodemailer.createTransport({
     host: "smtp.zoho.com",
