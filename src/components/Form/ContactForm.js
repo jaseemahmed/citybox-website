@@ -57,7 +57,7 @@ const ContactForm = () => {
           setSubmitting(false)
           resetForm();
         } catch (e) {
-          setErrMsg(e.message);
+          console.log(e.message);
         }
         setTimeout(() => {
           Swal.fire({
