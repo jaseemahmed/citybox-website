@@ -33,16 +33,32 @@ const ContactForm = () => {
     <Formik
       initialValues={initialValues}
       validationSchema={validationSchema}
-      onSubmit={(values, { setSubmitting, resetForm }) => {
+      onSubmit={async (values, { setSubmitting, resetForm }) => {
         console.log(values);
-        setTimeout(() => {
-          axios.post("https://cityboxcargo.herokuapp.com/sendMessage", values)
-            .then((response) => {
-              console.log(response)
-            })
-          setSubmitting(false);
+        // setTimeout(() => {
+        //   axios.post("https://cityboxcargo.herokuapp.com/sendMessage", values)
+        //     .then((response) => {
+        //       console.log(response)
+        //     })
+        //   setSubmitting(false);
+        //   resetForm();
+        // }, 1000);
+        const data = {
+          ...values
+        };
+        const options = {
+          method: "POST",
+          headers: { "Content-Type": "application/x-www-form-urlencoded" },
+          data: JSON.stringify(data),
+          url: "/sendMessage"
+        };
+        try {
+          await axios(options);
+          setSubmitting(false)
           resetForm();
-        }, 1000);
+        } catch (e) {
+          setErrMsg(e.message);
+        }
         setTimeout(() => {
           Swal.fire({
             title: "<h5>Thank you for contacting City Box Cargo Movers</h5>",
