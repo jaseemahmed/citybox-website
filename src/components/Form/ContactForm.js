@@ -6,14 +6,14 @@ import * as Yup from "yup";
 import useStyles from './FormStyles'
 import Swal from "sweetalert2";
 
-
+const encode = (data) => {
+  return Object.keys(data)
+    .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+    .join("&");
+}
 const ContactForm = () => {
 
-  const encode = (data) => {
-    return Object.keys(data)
-      .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
-      .join("&");
-  }
+
   const initialValues = {
     uname: "",
     phone: "",
@@ -38,7 +38,7 @@ const ContactForm = () => {
       initialValues={initialValues}
       validationSchema={validationSchema}
       onSubmit={(values, { setSubmitting, resetForm }) => {
-        axios("/", {
+        fetch("/", {
           method: "POST",
           headers: { "Content-Type": "application/x-www-form-urlencoded" },
           body: encode({ "form-name": "contact", ...values })
@@ -73,7 +73,12 @@ const ContactForm = () => {
       enableReinitialize
     >
       {(formikProps) => (
-        <Form onSubmit={formikProps.handleSubmit} className={classes.form} name="contact-form" data-netlify={true} >
+        <Form 
+        onSubmit={formikProps.handleSubmit} 
+        className={classes.form} 
+        name="contact" 
+        data-netlify-honeypot='bot-field' 
+        data-netlify={true} >
           <FormControl fullWidth className={classes.formField}>
             <Field name="uname" as={TextField} label="Name" />
             <ErrorMessage component="div" name="uname" />
