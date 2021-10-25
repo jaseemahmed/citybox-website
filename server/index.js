@@ -35,6 +35,7 @@ app.post("/sendMessage", (req, res) => {
   };
 
   transport.sendMail(mailData, (error, info) => {
+    res.send(mailData)
     if (error) {
       return console.log(error);
     } else {
