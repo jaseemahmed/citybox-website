@@ -9,6 +9,8 @@ import Swal from "sweetalert2";
 
 const ContactForm = () => {
   const initialValues = {
+    "bot-field": "",
+    "form-name": "contact",
     uname: "",
     phone: "",
     email: "",
@@ -35,9 +37,9 @@ const ContactForm = () => {
         console.log(values);
         setTimeout(() => {
           axios.post("https://cityboxcargo.herokuapp.com/sendMessage", values)
-          .then((response) => {
-            console.log(response)
-          })
+            .then((response) => {
+              console.log(response)
+            })
           setSubmitting(false);
           resetForm();
         }, 1000);
@@ -55,6 +57,8 @@ const ContactForm = () => {
     >
       {(formikProps) => (
         <Form onSubmit={formikProps.handleSubmit} className={classes.form} name="contact-form" data-netlify={true} >
+          <Field type="hidden" name="bot-field" />
+          <Field type="hidden" name="form-name" />
           <FormControl fullWidth className={classes.formField}>
             <Field name="uname" as={TextField} label="Name" />
             <ErrorMessage component="div" name="uname" />

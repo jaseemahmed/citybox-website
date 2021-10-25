@@ -47,19 +47,6 @@ const Home = () => {
   const handleClose = () => {
     setOpen(false);
   };
-
-  const onSubmit = (values) => {
-    axios.post("https://www.cityboxcargomovers.com/sendMessage", values);
-    setTimeout(function () {
-      setSuccess(true);
-    }, 1000);
-    setTimeout(function () {
-      setOpen(false);
-    }, 3000);
-    setTimeout(function () {
-      setSuccess(false);
-    }, 4000);
-  };
   
   return (
     <>
