@@ -30,6 +30,9 @@ import Slide from "react-reveal/Slide";
 import axios from "axios";
 import Modal from "../components/Modal/CbModal";
 import FabBtn from "../components/FabBtn/FabBtn";
+import FloatingActionBtn from "../components/FloatingActions/FloatingActionBtn";
+import CallIcon from "@material-ui/icons/Call";
+import EmailIcon from '@material-ui/icons/Email';
 const Home = () => {
   const classes = useStyles();
 
@@ -47,7 +50,7 @@ const Home = () => {
   const handleClose = () => {
     setOpen(false);
   };
-  
+
   return (
     <>
       <Modal
@@ -203,9 +206,12 @@ const Home = () => {
       <Container disableGutters={true} className={classes.footerContainer}>
         <Footer />
       </Container>
-      {/* <Container> */}
-        <FabBtn />
-      {/* </Container> */}
+
+      <div className={classes.mailicon}><FloatingActionBtn metaData="mailto:info@cityboxcargo.com" icon={<EmailIcon />} text={'info@cityboxcargo.com'} /></div>
+      <div className={classes.callicon}><FloatingActionBtn metaData="tel:042240111" icon={<CallIcon />} text={'04 224 0111'} /></div>
+
+      <FabBtn />
+
     </>
   );
 };

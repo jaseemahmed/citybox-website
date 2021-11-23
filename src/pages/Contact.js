@@ -12,6 +12,10 @@ import Fade from "react-reveal/Fade";
 import { useTheme } from "@material-ui/core/styles";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
 import axios from 'axios'
+import FabBtn from "../components/FabBtn/FabBtn";
+import FloatingActionBtn from "../components/FloatingActions/FloatingActionBtn";
+import CallIcon from "@material-ui/icons/Call";
+import EmailIcon from '@material-ui/icons/Email';
 
 const Contact = () => {
   const classes = useStyles();
@@ -51,6 +55,10 @@ const Contact = () => {
       <Container disableGutters={true} className={classes.footerContainer}>
         <Footer />
       </Container>
+      <div className={classes.mailicon}><FloatingActionBtn metaData="mailto:info@cityboxcargo.com" icon={<EmailIcon />} text={'info@cityboxcargo.com'} /></div>
+      <div className={classes.callicon}><FloatingActionBtn metaData="tel:042240111" icon={<CallIcon />} text={'04 224 0111'} /></div>
+
+      <FabBtn />
     </>
   );
 };

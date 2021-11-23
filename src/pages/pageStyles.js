@@ -93,7 +93,7 @@ export default makeStyles((theme) => ({
       color: theme.palette.secondary.main,
       marginBottom: "2rem",
     },
-    '& p':{
+    '& p': {
       lineHeight: '2rem'
     },
     [theme.breakpoints.down("sm")]: {
@@ -115,4 +115,14 @@ export default makeStyles((theme) => ({
       flexFlow: "column",
     },
   },
+  mailicon: {
+    position: 'fixed',
+    bottom: '9rem',
+    right: '1rem',
+  },
+  callicon: {
+    position: 'fixed',
+    bottom: '5rem',
+    right: '1rem',
+  }
 }));

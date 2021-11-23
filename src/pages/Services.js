@@ -16,6 +16,10 @@ import { ServicesList } from "../constants/ServicesList";
 
 import Fade from "react-reveal/Fade";
 import Slide from "react-reveal/Slide";
+import FabBtn from "../components/FabBtn/FabBtn";
+import FloatingActionBtn from "../components/FloatingActions/FloatingActionBtn";
+import CallIcon from "@material-ui/icons/Call";
+import EmailIcon from '@material-ui/icons/Email';
 const Services = () => {
   const classes = useStyles();
   return (
@@ -85,6 +89,10 @@ const Services = () => {
       <Container disableGutters={true} className={classes.footerContainer}>
         <Footer />
       </Container>
+      <div className={classes.mailicon}><FloatingActionBtn metaData="mailto:info@cityboxcargo.com" icon={<EmailIcon />} text={'info@cityboxcargo.com'} /></div>
+      <div className={classes.callicon}><FloatingActionBtn metaData="tel:042240111" icon={<CallIcon />} text={'04 224 0111'} /></div>
+
+      <FabBtn />
     </>
   );
 };
