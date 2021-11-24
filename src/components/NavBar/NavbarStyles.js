@@ -18,12 +18,26 @@ export default makeStyles((theme) => ({
     alignItems: 'center',
     padding: '0 9rem',
     color: '#fff',
-    '& p':{
+    '& p': {
       display: 'flex',
       alignItems: 'center',
-      '& span':{
+      '& span': {
         marginLeft: "1rem"
       }
-    }
+    },
+    [theme.breakpoints.down("sm")]: {
+      padding: '0 1rem',
+      top: '56px',
+    },
+    [theme.breakpoints.down("xs")]: {
+      padding: '0 .5rem',
+      top: '56px',
+      '& span': {
+        marginLeft: "0 !important"
+      }
+    },
+    [theme.breakpoints.up("sm")]: {
+      top: '64px',
+    },
   }
 }))
