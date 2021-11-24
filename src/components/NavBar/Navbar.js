@@ -7,6 +7,8 @@ import MobileMenu from "./Menu/MobileMenu";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
 import { useTheme } from "@material-ui/core/styles";
 import useStyles from './NavbarStyles'
+import CallIcon from "@material-ui/icons/Call";
+import EmailIcon from '@material-ui/icons/Email';
 
 const Navbar = () => {
   const theme = useTheme();
@@ -30,7 +32,7 @@ const Navbar = () => {
   return (
     <Container>
       <Box component="nav">
-        <AppBar position="fixed" color="inherit" elevation={0} className={classes.appBar}>
+        <AppBar position="fixed" color="inherit" elevation={2} className={classes.appBar}>
           <Toolbar>
             <Grid container>
               <Grid item md={2} xs={6}>
@@ -42,6 +44,10 @@ const Navbar = () => {
             </Grid>
           </Toolbar>
         </AppBar>
+        <div className={classes.contactBar}>
+          <p><CallIcon /> <span>+971 4 224 0111</span></p>
+          <p><EmailIcon /> <span>info@cityboxcargo.com</span></p>
+        </div>
       </Box>
     </Container>
   );
