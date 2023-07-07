@@ -32,7 +32,7 @@ import Modal from "../components/Modal/CbModal";
 import FabBtn from "../components/FabBtn/FabBtn";
 import FloatingActionBtn from "../components/FloatingActions/FloatingActionBtn";
 import CallIcon from "@material-ui/icons/Call";
-import EmailIcon from '@material-ui/icons/Email';
+import EmailIcon from "@material-ui/icons/Email";
 const Home = () => {
   const classes = useStyles();
 
@@ -60,9 +60,7 @@ const Home = () => {
         modalTitle="Schedule Your Pickup"
         dialogContent={
           !success ? (
-            <ContactForm
-              btnTxt="Schedule Now"
-            ></ContactForm>
+            <ContactForm btnTxt="Schedule Now"></ContactForm>
           ) : (
             <Typography style={{ padding: "1rem", textAlign: "center" }}>
               Thank You !! <br />
@@ -207,11 +205,22 @@ const Home = () => {
         <Footer />
       </Container>
 
-      <div className={classes.mailicon}><FloatingActionBtn metaData="mailto:info@cityboxcargo.com" icon={<EmailIcon />} text={'info@cityboxcargo.com'} /></div>
-      <div className={classes.callicon}><FloatingActionBtn metaData="tel:042240111" icon={<CallIcon />} text={'04 224 0111'} /></div>
+      <div className={classes.mailicon}>
+        <FloatingActionBtn
+          metaData="mailto:info@cityboxcargo.com"
+          icon={<EmailIcon />}
+          text={"info@cityboxcargo.com"}
+        />
+      </div>
+      <div className={classes.callicon}>
+        <FloatingActionBtn
+          metaData="tel:+971505683891"
+          icon={<CallIcon />}
+          text={"+971 50 568 3891"}
+        />
+      </div>
 
       <FabBtn />
-
     </>
   );
 };

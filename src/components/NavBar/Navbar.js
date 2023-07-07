@@ -9,6 +9,7 @@ import { useTheme } from "@material-ui/core/styles";
 import useStyles from './NavbarStyles'
 import CallIcon from "@material-ui/icons/Call";
 import EmailIcon from '@material-ui/icons/Email';
+import PhoneAndroidIcon from '@material-ui/icons/PhoneAndroid';
 
 const Navbar = () => {
   const theme = useTheme();
@@ -45,7 +46,11 @@ const Navbar = () => {
           </Toolbar>
         </AppBar>
         <div className={classes.contactBar}>
-          <p><CallIcon /> <span>+971 4 224 0111</span></p>
+          <Box className={classes.flex}>
+          <p><CallIcon fontSize="small"/> <span>+971 4 224 0111</span></p>
+          <p>&nbsp;&nbsp;</p>
+          <p><PhoneAndroidIcon fontSize="small"/> <span>+971 50 568 3891</span></p>
+          </Box>
           <p><EmailIcon /> <span>info@cityboxcargo.com</span></p>
         </div>
       </Box>

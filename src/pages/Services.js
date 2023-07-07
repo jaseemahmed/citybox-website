@@ -19,7 +19,7 @@ import Slide from "react-reveal/Slide";
 import FabBtn from "../components/FabBtn/FabBtn";
 import FloatingActionBtn from "../components/FloatingActions/FloatingActionBtn";
 import CallIcon from "@material-ui/icons/Call";
-import EmailIcon from '@material-ui/icons/Email';
+import EmailIcon from "@material-ui/icons/Email";
 const Services = () => {
   const classes = useStyles();
   return (
@@ -44,7 +44,9 @@ const Services = () => {
             sSubTitle="Serving the society with better logistics"
           />
           <Typography variant="body2" className={classes.PlainTxt}>
-            At city box cargo movers, we offer you a secure, timely, and efficient solution for all your shipping needs. We pack it not only with your valuable goods but also with our quality.
+            At city box cargo movers, we offer you a secure, timely, and
+            efficient solution for all your shipping needs. We pack it not only
+            with your valuable goods but also with our quality.
           </Typography>
         </Fade>
       </Container>
@@ -89,9 +91,20 @@ const Services = () => {
       <Container disableGutters={true} className={classes.footerContainer}>
         <Footer />
       </Container>
-      <div className={classes.mailicon}><FloatingActionBtn metaData="mailto:info@cityboxcargo.com" icon={<EmailIcon />} text={'info@cityboxcargo.com'} /></div>
-      <div className={classes.callicon}><FloatingActionBtn metaData="tel:042240111" icon={<CallIcon />} text={'04 224 0111'} /></div>
-
+      <div className={classes.mailicon}>
+        <FloatingActionBtn
+          metaData="mailto:info@cityboxcargo.com"
+          icon={<EmailIcon />}
+          text={"info@cityboxcargo.com"}
+        />
+      </div>
+      <div className={classes.callicon}>
+        <FloatingActionBtn
+          metaData="tel:+971505683891"
+          icon={<CallIcon />}
+          text={"+971 50 568 3891"}
+        />
+      </div>
       <FabBtn />
     </>
   );

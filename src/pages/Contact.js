@@ -55,9 +55,20 @@ const Contact = () => {
       <Container disableGutters={true} className={classes.footerContainer}>
         <Footer />
       </Container>
-      <div className={classes.mailicon}><FloatingActionBtn metaData="mailto:info@cityboxcargo.com" icon={<EmailIcon />} text={'info@cityboxcargo.com'} /></div>
-      <div className={classes.callicon}><FloatingActionBtn metaData="tel:042240111" icon={<CallIcon />} text={'04 224 0111'} /></div>
-
+      <div className={classes.mailicon}>
+        <FloatingActionBtn
+          metaData="mailto:info@cityboxcargo.com"
+          icon={<EmailIcon />}
+          text={"info@cityboxcargo.com"}
+        />
+      </div>
+      <div className={classes.callicon}>
+        <FloatingActionBtn
+          metaData="tel:+971505683891"
+          icon={<CallIcon />}
+          text={"+971 50 568 3891"}
+        />
+      </div>
       <FabBtn />
     </>
   );
