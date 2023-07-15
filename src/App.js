@@ -6,6 +6,7 @@ import Contact from "./pages/Contact";
 import { CssBaseline } from "@material-ui/core";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
+import TrackShipment from "./pages/TrackShipment";
 
 
 const App = () => {
@@ -44,6 +45,9 @@ const App = () => {
           </Route>
           <Route path="/contact" exact>
             <Contact />
+          </Route>
+          <Route path="/track" exact>
+            <TrackShipment />
           </Route>
         </Switch>
       </div>
