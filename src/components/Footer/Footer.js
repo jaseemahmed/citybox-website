@@ -39,7 +39,7 @@ const Footer = () => {
             </List>
           </Grid>
           <Grid item md={6} >
-            <Box style={{ marginBottom: "2rem" }}>
+            {/* <Box style={{ marginBottom: "2rem" }}>
               <Typography varinat="h6" className={classes.footerTitle}>
                 Quick Links
               </Typography>
@@ -48,7 +48,7 @@ const Footer = () => {
                   <Typography variant="body2">Track your shipment</Typography>
                 </ListItem>
               </List>
-            </Box>
+            </Box> */}
             <Box style={{ marginBottom: "2rem" }}>
               <Typography varinat="h6" className={classes.footerTitle}>
                 Connect us

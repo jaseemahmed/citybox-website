@@ -3,7 +3,7 @@ import React from "react";
 import useStyles from "./HeroStyles";
 import Fade from "react-reveal/Fade";
 
-const Hero = ({ heroTitle, heroSubTitle, firstCta, secondCta, height, backgroundImage, handleModal }) => {
+const Hero = ({ heroTitle, heroSubTitle, firstCta, secondCta, height, backgroundImage, handleModal, handleQuote }) => {
   const classes = useStyles();
 
   return (
@@ -25,7 +25,7 @@ const Hero = ({ heroTitle, heroSubTitle, firstCta, secondCta, height, background
                 </Button>
               )}
               {secondCta && (
-                <Button variant="contained" color="primary">
+                <Button variant="contained" color="primary" onClick={handleQuote}>
                   {secondCta}
                 </Button>
               )}

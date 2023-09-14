@@ -47,6 +47,10 @@ const Home = () => {
     setOpen(true);
   };
 
+  const handleQuote = () => {
+    window.location = "/contact";
+  };
+
   const handleClose = () => {
     setOpen(false);
   };
@@ -78,10 +82,12 @@ const Home = () => {
           heroTitle="Move on, We take care of the rest"
           heroSubTitle="With our professional movement and shipping services"
           firstCta="schedule your pickup"
-          secondCta="Track your shipment"
+          // secondCta="Track your shipment"
+          secondCta="Get a quote"
           height="100vh"
           backgroundImage={downsm ? homeHeroMob : homeHeroFull}
           handleModal={handleModal}
+          handleQuote={handleQuote}
           sent={sent}
           setText={setText}
         />

@@ -65,6 +65,9 @@ const TrackShipment = () => {
   useEffect(() => {
     generateToken();
   }, []);
+  useEffect(() => {
+    console.log(shipStatus);
+  }, [shipStatus]);
 
   const handleTrack = async (value) => {
     const token = ls.get("token");
@@ -88,7 +91,7 @@ const TrackShipment = () => {
             const reversedArr = res?.data?.data?.shipmentStatus.reverse();
             statusRev.push(reversedArr[0]);
           }
-          setShipStatus(statusRev[0]);
+          setShipStatus(res?.data?.data?.shipmentStatus);
         })
         .catch((err) => {
           console.log(err);
@@ -149,7 +152,7 @@ const TrackShipment = () => {
                 />
               </FormControl>
               <FormControl fullWidth margin="normal">
-                {shipment !== "" ? (
+                {/* {shipment !== "" ? (
                   <Button
                     type="button"
                     variant="contained"
@@ -162,7 +165,10 @@ const TrackShipment = () => {
                   <Button type="submit" variant="contained" color="primary">
                     Track now
                   </Button>
-                )}
+                )} */}
+                <Button type="submit" variant="contained" color="primary">
+                    Track now
+                  </Button>
               </FormControl>
             </form>
             {shipment && (
@@ -218,23 +224,31 @@ const TrackShipment = () => {
                       {shipment?.data?.deliveryCountry}
                     </Typography>
                   </Grid>
-                  <Divider orientation="horizontal" variant="fullWidth" style={{margin: '1rem 0', color: '#fff'}}/>
+                  <Divider
+                    orientation="horizontal"
+                    variant="fullWidth"
+                    style={{ margin: "1rem 0", color: "#fff" }}
+                  />
                   <Grid item xs={12} md={3}>
                     <Typography>Status: </Typography>
                   </Grid>
                   <Grid item xs={12} md={9}>
                     <List disablePadding>
-                      <ListItem disableGutters style={{margin: 0, padding: 0}}>
-                        <ListItemText
-                          primary={shipStatus && shipStatus?.sStatus}
-                          secondary={
-                            shipStatus &&
-                            moment(shipStatus?.shipmentDate).format(
-                              "DD-MM-yyyy"
-                            )
-                          }
-                        />
-                      </ListItem>
+                      {shipStatus.length > 0 &&
+                        shipStatus.map((item, i) => (
+                          <ListItem
+                            disableGutters
+                            style={{ margin: 0, padding: 0 }}
+                            key={i}
+                          >
+                            <ListItemText
+                              primary={item?.sStatus}
+                              secondary={moment(item?.shipmentDate).format(
+                                "DD-MM-yyyy"
+                              )}
+                            />
+                          </ListItem>
+                        ))}
                     </List>
                   </Grid>
                 </Grid>
