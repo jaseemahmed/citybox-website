@@ -33,6 +33,7 @@ import FabBtn from "../components/FabBtn/FabBtn";
 import FloatingActionBtn from "../components/FloatingActions/FloatingActionBtn";
 import CallIcon from "@material-ui/icons/Call";
 import EmailIcon from "@material-ui/icons/Email";
+import Layout from "../components/Layout";
 const Home = () => {
   const classes = useStyles();
 
@@ -56,7 +57,7 @@ const Home = () => {
   };
 
   return (
-    <>
+    <Layout>
       <Modal
         open={open}
         width="500px"
@@ -74,9 +75,6 @@ const Home = () => {
           )
         }
       />
-      <Container>
-        <NavBar />
-      </Container>
       <Container disableGutters={true}>
         <Hero
           heroTitle="Move on, We take care of the rest"
@@ -206,28 +204,7 @@ const Home = () => {
           />
         </Slide>
       </Container>
-
-      <Container disableGutters={true} className={classes.footerContainer}>
-        <Footer />
-      </Container>
-
-      <div className={classes.mailicon}>
-        <FloatingActionBtn
-          metaData="mailto:info@cityboxcargo.com"
-          icon={<EmailIcon />}
-          text={"info@cityboxcargo.com"}
-        />
-      </div>
-      <div className={classes.callicon}>
-        <FloatingActionBtn
-          metaData="tel:+971505683891"
-          icon={<CallIcon />}
-          text={"+971 50 568 3891"}
-        />
-      </div>
-
-      <FabBtn />
-    </>
+    </Layout>
   );
 };
 

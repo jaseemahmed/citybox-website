@@ -1,6 +1,7 @@
 import {
   Box,
   Grid,
+  Link,
   List,
   ListItem,
   ListItemText,
@@ -11,9 +12,8 @@ import NewsLetterForm from "../Form/NewsLetterForm";
 import useStyles from "./FooterStyles";
 import { ServicesList } from "../../constants/ServicesList";
 import logo2 from "../../images/logo2.svg";
-import SocialIcons from '../SocialIcons/SocialIcons'
+import SocialIcons from "../SocialIcons/SocialIcons";
 import { HashLink } from "react-router-hash-link";
-
 
 const Footer = () => {
   const classes = useStyles();
@@ -26,19 +26,52 @@ const Footer = () => {
           </Grid>
         </Grid>
         <Grid container className={classes.footerContent}>
-          <Grid item md={6}>
+          <Grid item md={4}>
             <Typography varinat="h6" className={classes.footerTitle}>
               Services
             </Typography>
             <List className={classes.customList}>
               {ServicesList.map((service, index) => (
                 <ListItem key={index} className={classes.customListItem}>
-                  <HashLink className={classes.footerLinks} smooth to={`/services#${service.slug}`}><Typography variant="body2">{service.serviceTitle}</Typography></HashLink>
+                  <HashLink
+                    className={classes.footerLinks}
+                    smooth
+                    to={`/services#${service.slug}`}
+                  >
+                    <Typography variant="body2">
+                      {service.serviceTitle}
+                    </Typography>
+                  </HashLink>
                 </ListItem>
               ))}
             </List>
           </Grid>
-          <Grid item md={6} >
+          <Grid item md={4}>
+            <Typography varinat="h6" className={classes.footerTitle}>
+              Important Links
+            </Typography>
+            <List className={classes.customList}>
+              <ListItem>
+                <Link
+                  className={classes.footerLinks}
+                  href={`/terms-conditions`}
+                  underline="none"
+                >
+                  <Typography variant="body2">Terms & Conditions</Typography>
+                </Link>
+              </ListItem>
+              <ListItem>
+                <Link
+                  className={classes.footerLinks}
+                  href={`/privacy-policy`}
+                  underline="none"
+                >
+                  <Typography variant="body2">Privacy Policy</Typography>
+                </Link>
+              </ListItem>
+            </List>
+          </Grid>
+          <Grid item md={4}>
             {/* <Box style={{ marginBottom: "2rem" }}>
               <Typography varinat="h6" className={classes.footerTitle}>
                 Quick Links
@@ -53,9 +86,17 @@ const Footer = () => {
               <Typography varinat="h6" className={classes.footerTitle}>
                 Connect us
               </Typography>
-              <div className={classes.footerSocialIcons}><SocialIcons /></div>
+              <div className={classes.footerSocialIcons}>
+                <SocialIcons />
+              </div>
               <div className={classes.gmap}>
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d536.8059694981569!2d55.3816853235923!3d25.163206017091!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjXCsDA5JzQ3LjYiTiA1NcKwMjInNTUuNCJF!5e0!3m2!1sen!2sae!4v1633860390852!5m2!1sen!2sae"></iframe>
+                {/* <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d536.8059694981569!2d55.3816853235923!3d25.163206017091!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjXCsDA5JzQ3LjYiTiA1NcKwMjInNTUuNCJF!5e0!3m2!1sen!2sae!4v1633860390852!5m2!1sen!2sae"></iframe> */}
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3611.184473533724!2d55.37949697483635!3d25.163248233075915!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f6731f35964e7%3A0xb7e632c3378b7b2a!2sCityBox%20Cargo%20Movers!5e0!3m2!1sen!2sae!4v1705816087747!5m2!1sen!2sae"
+                  width="600"
+                  height="250"
+                  loading="lazy"
+                ></iframe>
               </div>
             </Box>
           </Grid>

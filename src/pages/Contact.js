@@ -11,23 +11,20 @@ import SocialIcons from "../components/SocialIcons/SocialIcons";
 import Fade from "react-reveal/Fade";
 import { useTheme } from "@material-ui/core/styles";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
-import axios from 'axios'
+import axios from "axios";
 import FabBtn from "../components/FabBtn/FabBtn";
 import FloatingActionBtn from "../components/FloatingActions/FloatingActionBtn";
 import CallIcon from "@material-ui/icons/Call";
-import EmailIcon from '@material-ui/icons/Email';
+import EmailIcon from "@material-ui/icons/Email";
+import Layout from "../components/Layout";
 
 const Contact = () => {
   const classes = useStyles();
-  const [success, setSuccess] = useState()
+  const [success, setSuccess] = useState();
   const theme = useTheme();
   const downsm = useMediaQuery(theme.breakpoints.down("sm"));
   return (
-    <>
-      <Container>
-        <NavBar />
-      </Container>
-
+    <Layout>
       <Container disableGutters={true} className={classes.heroContainer}>
         <Hero
           heroTitle="HAVE SOMETHING TO MOVE? YOU'RE A CLICK AWAY TO REACH US."
@@ -38,39 +35,22 @@ const Contact = () => {
       </Container>
 
       <Container disableGutters={true} className={classes.sectionContainer}>
-        <Grid container spacing={4} className={`${classes.flexFlowMob} ${classes.reverse}`}>
+        <Grid
+          container
+          spacing={4}
+          className={`${classes.flexFlowMob} ${classes.reverse}`}
+        >
           <Grid item md={6}>
             <SocialIcons />
           </Grid>
           <Grid item md={6} className={classes.contactPageForm}>
             <Fade bottom>
-              <ContactForm
-                btnTxt="Get a quote"
-              />
+              <ContactForm btnTxt="Get a quote" />
             </Fade>
           </Grid>
         </Grid>
       </Container>
-
-      <Container disableGutters={true} className={classes.footerContainer}>
-        <Footer />
-      </Container>
-      <div className={classes.mailicon}>
-        <FloatingActionBtn
-          metaData="mailto:info@cityboxcargo.com"
-          icon={<EmailIcon />}
-          text={"info@cityboxcargo.com"}
-        />
-      </div>
-      <div className={classes.callicon}>
-        <FloatingActionBtn
-          metaData="tel:+971505683891"
-          icon={<CallIcon />}
-          text={"+971 50 568 3891"}
-        />
-      </div>
-      <FabBtn />
-    </>
+    </Layout>
   );
 };
 

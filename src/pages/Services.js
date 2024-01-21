@@ -20,14 +20,11 @@ import FabBtn from "../components/FabBtn/FabBtn";
 import FloatingActionBtn from "../components/FloatingActions/FloatingActionBtn";
 import CallIcon from "@material-ui/icons/Call";
 import EmailIcon from "@material-ui/icons/Email";
+import Layout from "../components/Layout";
 const Services = () => {
   const classes = useStyles();
   return (
-    <>
-      <Container>
-        <NavBar />
-      </Container>
-
+    <Layout>
       <Container disableGutters={true} className={classes.heroContainer}>
         <Hero
           heroTitle="You move on, We take care of the rest"
@@ -87,26 +84,7 @@ const Services = () => {
           </>
         ))}
       </Container>
-
-      <Container disableGutters={true} className={classes.footerContainer}>
-        <Footer />
-      </Container>
-      <div className={classes.mailicon}>
-        <FloatingActionBtn
-          metaData="mailto:info@cityboxcargo.com"
-          icon={<EmailIcon />}
-          text={"info@cityboxcargo.com"}
-        />
-      </div>
-      <div className={classes.callicon}>
-        <FloatingActionBtn
-          metaData="tel:+971505683891"
-          icon={<CallIcon />}
-          text={"+971 50 568 3891"}
-        />
-      </div>
-      <FabBtn />
-    </>
+    </Layout>
   );
 };
 
